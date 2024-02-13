@@ -3,7 +3,7 @@ html, body{
   box-sizing: border-box;
 }
 body{
-  height: 100vh;
+  height: 200vh; 
   display: flex;
   flex-direction: column;
 }
@@ -15,6 +15,7 @@ main{
   flex: 1;
   /* background: brown; */
   display: flex; 
+  margin-top: 70px; 
 }
 
 /* 헤더영역 */
@@ -26,6 +27,10 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center; 
+  position: fixed; 
+  top: 0; left: 0; right: 0; 
+  z-index: 1; 
+  background-color: #fff; 
 }
 header > nav > ul{
   display: flex;
@@ -81,11 +86,11 @@ header > nav > ul > li > ul > li > a{
 main aside{
   width: 300px;
   flex: none;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 main section{
   flex: 1;
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 main section .slider .slide{
   width: 100%;
@@ -100,24 +105,74 @@ main section .slider img{
   object-position: center;
 }
 main section .slider{
-  width: 90%; height: 700px; /* 수정 */
+  width: 90%; height: 700px; 
   margin: 2rem auto;
-  /* border: 3px solid brown; */ /* 주석처리 */
+  /* border: 3px solid brown; */ 
   display: flex; 
   overflow-x: auto; 
   overflow-y: hidden; 
   scroll-snap-type: x mandatory;  
 } 
 main section .slider::-webkit-scrollbar {
-  height: 8px;  /* 스크롤바의 너비 */
+  height: 8px;  
 }
 
 main section .slider::-webkit-scrollbar-thumb {
-  height: 30%; /* 스크롤바의 길이 */
-  background: #d8792b; /* 스크롤바의 색상 */
+  height: 30%; 
+  background: #d8792b; 
   border-radius: 20px;
 }
 
 main section .slider::-webkit-scrollbar-track {
-  background: rgba(235, 185, 93, 0.3);  /*스크롤바 뒷 배경 색상*/
+  background: rgba(235, 185, 93, 0.3);  
+}
+
+/* 사이드바 영역 */
+main aside nav ul{
+  list-style: none;
+  padding: .5rem; margin: 2rem;
+}
+main aside nav{
+  background-color: #d8792b;
+  position: sticky; top: 70px; /* 추가 */
+}
+main aside nav ul li a{
+  color: #fff;
+}
+
+/* 푸터 영역 */
+footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  border-top: 1px solid #777;
+  margin: 0 auto;
+  padding: .5rem 0;
+}
+footer .rights{
+  font-weight: 400;
+}
+footer .icons{
+  font-size: 1.5rem;
+}
+footer .icons i{
+  margin-right: .5rem;
+  transition: .3s;
+}
+footer .icons i:hover{
+  color: brown;
+  transform: scale(1.2);
+}
+body > span{
+  position: fixed;
+  bottom: 2rem; right: 1rem;
+  z-index: 1;  
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: .3s;
+}
+body > span:hover{
+  transform: translateY(-10px);
 }
